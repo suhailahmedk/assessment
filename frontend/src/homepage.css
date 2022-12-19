@@ -1,0 +1,234 @@
+.home-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  top: 171px;
+  position: relative;
+}
+.filter-by {
+  width: 150px;
+  height: 60px;
+  /* UI Properties */
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 10px #00000017;
+  border-radius: 5px;
+  border-color: #ffffff;
+
+  opacity: 1;
+  text-align: center;
+  font: normal normal medium 22px/28px Montserrat;
+  letter-spacing: 0.6px;
+  color: #707070;
+  opacity: 1;
+  font-size: x-large;
+  font-weight: 400;
+}
+.btn-tqm {
+  width: 266px;
+  height: 68px;
+  /* UI Properties */
+  background: transparent linear-gradient(304deg, #e11e25 0%, #d4242a 100%) 0%
+    0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 50px;
+  opacity: 1;
+  border: none;
+
+  text-align: center;
+  font: normal normal bold 24px/22px Nunito;
+  letter-spacing: 1.2px;
+  color: #ffffff;
+  opacity: 1;
+  font-size: x-large;
+  font-weight: 400;
+}
+
+.top-row {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.custom-card {
+  width: 162px;
+  height: 227px;
+  background: #ffffff 0% 0% no-repeat padding-box;
+  box-shadow: 0px 0px 20px #00000017;
+  opacity: 1;
+  margin-right: 24px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 42px;
+}
+
+.statitics-data {
+  display: flex;
+  position: relative;
+  top: 43px;
+  width: 55%;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.star-icon {
+  content: url(Assets/icon/star-icon.png);
+}
+.card-icon {
+}
+.card-title {
+  text-align: center;
+  font: normal normal bold 13px/16px Montserrat;
+  letter-spacing: 0.26px;
+  color: #6dbcdb;
+  opacity: 1;
+  margin-top: 7.58px;
+}
+.card-value {
+  text-align: left;
+  font: normal normal 300 30px/37px Montserrat;
+  letter-spacing: 0px;
+  color: #000000;
+  opacity: 1;
+  margin-top: 28.35px;
+}
+
+.canvasjs-chart-canvas {
+  width: 100% !important;
+  height: 497px !important;
+  box-shadow: 0px 0px 10px #00000029;
+  border-radius: 5px;
+  opacity: 1;
+}
+.chart-cards {
+  display: flex;
+}
+.custom-line-chart {
+  width: 45%;
+  position: relative;
+  top: 43px;
+}
+.btn-quality{
+    width: 192px;
+height: 70px;
+/* UI Properties */
+background: #E11E25 0% 0% no-repeat padding-box;
+border-radius: 50px 0px 0px 50px;
+opacity: 1;
+border: none;
+text-align: center;
+  font: normal normal bold 24px/22px Nunito;
+  letter-spacing: 1.2px;
+  color: #ffffff;
+  opacity: 1;
+  font-size: x-large;
+  font-weight: 400;
+}
+.btn-performance{
+    width: 192px;
+height: 70px;
+/* UI Properties */
+background: #FFFFFF 0% 0% no-repeat padding-box;
+border-radius: 0px 50px 50px 0px;
+opacity: 1;
+border: none;
+text-align: center;
+  font: normal normal medium 22px/28px Montserrat;
+  letter-spacing: 0.6px;
+  color: #707070;
+  opacity: 1;
+  font-size: x-large;
+  font-weight: 400;
+}
+.top-row-btn{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+}
+.company-insights{
+    text-align: center;
+font: normal normal bold 32px/22px Nunito;
+letter-spacing: 0px;
+color: #606060;
+opacity: 1;
+}
+
+.custom-cart {
+    width: 320px;
+    height: 273px;
+    /* UI Properties */
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 25px;
+    opacity: 1;
+    margin-right: 24px;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 42px;
+  }
+
+  .statitics-data-2 {
+    display: flex;
+    position: relative;
+    top: 43px;
+    width: 95%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+  }
+  .img-icon {
+    content: url(Assets/icon/star-icon.png);
+  }
+  .cart-icon {
+  }
+  .cart-title {
+    text-align: center;
+font: normal normal 24px/22px Nunito;
+letter-spacing: 0px;
+color: #606060;
+opacity: 1;
+  }
+  .cart-value {
+    text-align: center;
+font: normal normal  20px/22px Nunito;
+letter-spacing: 0px;
+color: #606060;
+opacity: 1;
+position: relative;
+top: 20px;
+  }
+  .cart-btn{
+    position: relative;
+    top:20px;
+    width: 266px;
+    height: 58px;
+    /* UI Properties */
+    background: transparent linear-gradient(300deg, #FCAF3C 0%, #FF9500 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px #00000029;
+    border-radius: 50px;
+    opacity: 1;
+    border:none;
+font: normal normal bold 22px/22px Nunito;
+letter-spacing: 0px;
+color: #FFFFFF;
+opacity: 1;
+  }
+  .btn-red{
+    background: transparent linear-gradient(300deg, #E11E25 0%, #D4242A 100%) 0% 0% no-repeat padding-box !important;
+  }
+  .btn-green{
+    background: transparent linear-gradient(355deg, #82F89D 0%, #46C864 100%) 0% 0% no-repeat padding-box !important;
+  }
+  .btn-yellow{
+    background: transparent linear-gradient(300deg, #FCAF3C 0%, #FF9500 100%) 0% 0% no-repeat padding-box !important;
+  }
+  .btn-half-yellow{
+    background: transparent linear-gradient(322deg, #FFEF5D 0%, #F9C210 100%) 0% 0% no-repeat padding-box !important;
+  }
