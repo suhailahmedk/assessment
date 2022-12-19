@@ -7,11 +7,7 @@ router.post("/updateUser",userController.updateUser);
 router.post("/deleteUser",userController.deleteUser);
 router.post("/showUserByUserName",userController.showUserByUserName);
 router.get("/showAllUsers",userController.showAllUsers);
+router.post("/getUserById",userController.getUserById);
 router.post("/showAllUsersByRole",userController.showAllUsersByRole);
-router.post("/showAllUsersByBatch",userController.showAllUsersByBatch);
-router.post("/showAllUsersAttendanceByBatch",userController.showAllUsersAttendanceByBatch);
-router.get("/showAllUsersAttendance",userController.showAllUsersAttendance);
-router.post("/getAttendanceByUserId",userController.getAttendanceByUserId);
-
 
 module.exports=router;

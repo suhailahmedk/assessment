@@ -12,10 +12,10 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  };
+  }
   permission.init({
     title: DataTypes.STRING,
-    pid:DataTypes.INTEGER,
+    pid: DataTypes.INTEGER,
     slug: DataTypes.STRING,
     description: DataTypes.STRING,
     active: DataTypes.INTEGER,

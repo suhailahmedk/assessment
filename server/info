@@ -1,2 +1,16 @@
 git log --all --decorate --oneline --graph
 https://medium.com/@eth3rnit3/sequelize-relationships-ultimate-guide-f26801a75554
+
+
+npx sequelize-cli model:generate --name user --attributes name:string,username:string,email:string,password:string,isActive:integer,is_varified:integer,is_deleted:integer,last_login:date,imgUrl:string,phoneNumber:string,role_id:integer
+
+
+npx sequelize-cli model:generate --name role --attributes role_name:string,role_description:string,deleted_at:date,isActive:integer,is_deleted:integer
+
+
+npx sequelize-cli model:generate --name role_permission --attributes role_id:integer,permission_id:integer,deleted_at:date,is_deleted:integer
+
+
+npx sequelize-cli model:generate --name permission --attributes title:string,pid:integer,slug:string,description:string,active:integer,deleted_at:date,is_deleted:integer,
+
+npx sequelize-cli db:migrate

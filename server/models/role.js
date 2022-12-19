@@ -12,23 +12,21 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
     }
-  };
+  }
   role.init({
     role_name: DataTypes.STRING,
     role_description: DataTypes.STRING,
-    isActive: DataTypes.INTEGER,
     deleted_at: DataTypes.DATE,
+    isActive: DataTypes.INTEGER,
     is_deleted: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'role',
   });
-
-    role.associate = function(models){
+  role.associate = function(models){
     role.hasMany(models.user, {foreignKey:'role_id'});
     role.hasMany(models.role_permission, {foreignKey:'permission_id'});
     
   }
-
   return role;
 };

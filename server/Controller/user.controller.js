@@ -1,12 +1,14 @@
 const models = require("../models");
 const role = require("../models/role");
+// const crypto = require("crypto");
+// const sha256Hasher = crypto.createHmac("sha256", "123-h!-th!s-i!s-s$cr$t-k$y-321");
 
 function saveUser(req, res) {
   const user = {
     user_name: req.body.user_name,
     name: req.body.name,
     email: req.body.email,
-    password: req.body.password,
+    password: req.body.password,  //sha256Hasher.update(req.body.password).digest("hex"),
     phoneNumber: req.body.phoneNumber,
     is_deleted: 0,
     role_id: req.body.role_id,
@@ -40,7 +42,7 @@ function showAllUsers(req, res) {
     })
     .catch((error) => {
       res.status(500).json({
-        message: "error occurred",
+        message: error,
       });
     });
 }
@@ -64,127 +66,6 @@ function showAllUsersByRole(req, res) {
     });
 }
 
-function showAllUsersByBatch(req, res) {
-  models.student
-    .findAll({
-      include: [
-        {
-          model: models.user,
-          include: [
-            {
-              model: models.role,
-              where: {
-                is_deleted: 0,
-              },
-              require: false,
-            },
-          ],
-          where: {
-            is_deleted: 0,
-          },
-          require: false,
-        },
-      ],
-      where: {
-        is_deleted: 0,
-        batch_id: req.body.id,
-      },
-    })
-    .then((result) => {
-      let data = [];
-      result = result.map((re) => data.push(re.user));
-      res.status(200).json(data);
-    })
-    .catch((error) => {
-      res.status(500).json({
-        message: "error occurred",
-      });
-    });
-}
-
-function showAllUsersAttendanceByBatch(req, res) {
-  models.user
-    .findAll({
-      include: [
-        {
-          model: models.student,
-          include: [
-            {
-              model: models.attendance,
-              required: false,
-            },
-          ],
-          where: {
-            batch_id: req.body.id,
-            is_deleted: 0,
-          },
-          require: false,
-        },
-      ],
-      where: {
-        is_deleted: 0,
-      },
-    })
-    .then((result) => {
-      res.status(200).json(result);
-    })
-    .catch((error) => {
-      res.status(500).json({
-        message: "error occurred",
-      });
-    });
-}
-
-function showAllUsersAttendance(req, res) {
-    models.user
-      .findAll({
-        include: [
-          {
-            model: models.student,
-            include: [
-              {
-                model: models.attendance,
-                required: false,
-              },
-            ],
-            where: {
-              is_deleted: 0,
-            },
-            require: false,
-          },
-        ],
-        where: {
-          is_deleted: 0,
-        },
-      })
-      .then((result) => {
-        res.status(200).json(result);
-      })
-      .catch((error) => {
-        res.status(500).json({
-          message: "error occurred",
-        });
-      });
-  }
-
-  function getAttendanceByUserId(req, res) {
-    models.attendance
-      .findAll({
-        where: {
-          student_id: req.body.id,
-          is_deleted: 0,
-        },
-      })
-      .then((result) => {
-        res.status(200).json(result);
-      })
-      .catch((error) => {
-        res.status(500).json({
-          message: "error occurred",
-        });
-      });
-  }
-
 function showUserByUserName(req, res) {
   models.user
     .findOne({
@@ -196,6 +77,38 @@ function showUserByUserName(req, res) {
     .then((result) => {
       res.status(200).json(result);
     })
+    .catch((error) => {
+      res.status(500).json({
+        message: "error occurred",
+      });
+    });
+}
+
+function getUserById(req, res) {
+  models.user
+  .findOne({
+    include: [
+      {
+        model: models.role,
+        include: [
+          {
+            model: models.permission,
+            where: {
+              is_deleted: 0,
+            },
+            required: false,
+          },
+        ],
+        required: false,
+      },
+    ],
+    where: {
+      id: req.body.id,
+      is_deleted: 0,
+    },
+  }).then((result) => {
+    res.status(200).json(result);
+  })
     .catch((error) => {
       res.status(500).json({
         message: "error occurred",
@@ -260,8 +173,5 @@ module.exports = {
   updateUser: updateUser,
   deleteUser: deleteUser,
   showAllUsersByRole,
-  showAllUsersByBatch,
-  showAllUsersAttendanceByBatch,
-  showAllUsersAttendance,
-  getAttendanceByUserId
+  getUserById,
 };
